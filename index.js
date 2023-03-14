@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 app.use(express.static(path.join(__dirname, '/public')))
 app.set('views', __dirname + '/views')
-app.get("/", async(req, res) => {
+app.get("/home", async(req, res) => {
     res.render("home.ejs")
 })
 app.get("/about", async(req, res) => {
