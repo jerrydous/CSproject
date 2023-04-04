@@ -1,0 +1,21 @@
+form{
+    display: inline;
+    text-align: center;
+}
+
+section{
+    display: inline;
+    border: 1px solid black;
+    margin: 7px;
+    font-size: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}

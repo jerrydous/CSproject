@@ -102,3 +102,8 @@ body {
     border-radius: 100% / 0% 0% 70% 70%;
     background-color: var(--white);
 }
+
+iframe {
+    border: 1px solid black;
+    width: 100%;
+}

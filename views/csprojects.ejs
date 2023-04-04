@@ -12,7 +12,7 @@
 
     <body>
 
-        <div class="container">
+        <!-- <div class="container">
             <div class="title">
                 <h1>GHOST</h1>
             </div>
@@ -23,6 +23,116 @@
                 <div></div>
                 <div></div>
             </div>
+        </div> -->
+        <div class="container">
+            <h1>Some code examples</h1>
+            <h2>CSS codes</h2>
+            <pre>
+                <code>
+                    form{
+                        display: inline;
+                        text-align: center;
+                    }
+                    
+                    section{
+                        display: inline;
+                        border: 1px solid black;
+                        margin: 7px;
+                        font-size: 30px;
+                    }
+                    
+                    .container{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    img{
+                        height: 100px;
+                        width: 100px;
+                    }
+                </code>
+            </pre>
+            <h2>html code</h2>
+            <pre>
+                <code>
+&lt!DOCTYPE html&gt
+&lthtml lang="en"&gt
+
+&lthead&gt
+    &ltmeta charset="UTF-8"&gt
+    &ltmeta http-equiv="X-UA-Compatible"&gt
+    &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+    &ltlink rel="stylesheet" href="tabletennis.css"&gt
+    &lttitle&gtTable tennis&lt/title&gt
+&lt/head&gt
+
+&ltbody&gt
+    &ltdiv class="container"&gt
+        &ltimg src="https://p2.itc.cn/images01/20210808/e7cbad7fc0f14849a44091f61fabcfd3.jpeg"&gt
+    &lt/div&gt
+    &ltdiv class="container"&gt
+        &ltinput type="text" id="maxp" value="Please enter the score needed to win"&gt
+        &ltinput type="button" id="refresh" value="refresh"&gt
+    &lt/div&gt
+    &ltdiv class='container'&gt
+        &ltform action=""&gt
+            &ltinput type="submit" id="P1" value="P1"&gt
+        &lt/form&gt
+        &ltform action=""&gt
+            &ltinput type="submit" id="P2" value="P2"&gt
+        &lt/form&gt
+    &lt/div&gt
+    &ltdiv class="container"&gt
+        &ltsection&gt0&lt/section&gt
+        &ltsection&gt0&lt/section&gt
+    &lt/div&gt
+    &ltdiv id="result" class="container"&gt&lt/div&gt
+    &ltscript src="table tennis.js"&gt&lt/script&gt
+&lt/body&gt
+                </code>
+            </pre>
+            <h2>Javascript Codes</h2>
+            <pre>
+            <code>
+                let myforms=document.querySelectorAll("form")
+let mysecs=document.querySelectorAll("section")
+let maxn=document.querySelector("#maxp")
+let mydiv=document.querySelector('#result')
+let mybutton=document.querySelector("#refresh")
+myforms[0].addEventListener("submit",function(e){
+    e.preventDefault()
+    let t=parseInt(mysecs[0].textContent)+1
+    mysecs[0].innerText=t
+    if(t==parseInt(maxn.value)){
+        mydiv.innerText="Player1 Wins!"
+        mysecs[0].style.backgroundColor="green"
+        mysecs[1].style.backgroundColor="red"
+    }
+})
+
+myforms[1].addEventListener("submit",function(e){
+    e.preventDefault()
+    let t=parseInt(mysecs[1].textContent)+1
+    mysecs[1].innerText=t
+    if(t==parseInt(maxn.value)){
+        mydiv.innerText="Player2 Wins!"
+        mysecs[1].style.backgroundColor="green"
+        mysecs[0].style.backgroundColor="red"
+    }
+})
+
+mybutton.addEventListener('click',function(e){
+    e.preventDefault()
+    mysecs[0].innerText=0
+    mysecs[1].innerText=0
+    mysecs[1].style.backgroundColor="white"
+    mysecs[0].style.backgroundColor="white"
+    mydiv.innerText=""
+})
+            </code>
+        </pre>
+            <h2>Real Effect</h2>
+            <iframe width="600" height="700" src="/tabletennis"></iframe>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheer" href="/style3.css"> -->
+    <title>Table tennis</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://p2.itc.cn/images01/20210808/e7cbad7fc0f14849a44091f61fabcfd3.jpeg">
+    </div>
+    <div class="container">
+        <input type="text" id="maxp" value="Please enter the score needed to win">
+        <input type="button" id="refresh" value="refresh">
+    </div>
+    <div class='container'>
+        <form action="">
+            <input type="submit" id="P1" value="P1">
+        </form>
+        <form action="">
+            <input type="submit" id="P2" value="P2">
+        </form>
+    </div>
+    <div class="container">
+        <section>0</section>
+        <section>0</section>
+    </div>
+    <div id="result" class="container"></div>
+    <script>
+        let myforms = document.querySelectorAll("form")
+        let mysecs = document.querySelectorAll("section")
+        let maxn = document.querySelector("#maxp")
+        let mydiv = document.querySelector('#result')
+        let mybutton = document.querySelector("#refresh")
+        myforms[0].addEventListener("submit", function(e) {
+            e.preventDefault()
+            let t = parseInt(mysecs[0].textContent) + 1
+            mysecs[0].innerText = t
+            if (t == parseInt(maxn.value)) {
+                mydiv.innerText = "Player1 Wins!"
+                mysecs[0].style.backgroundColor = "green"
+                mysecs[1].style.backgroundColor = "red"
+            }
+        })
+
+        myforms[1].addEventListener("submit", function(e) {
+            e.preventDefault()
+            let t = parseInt(mysecs[1].textContent) + 1
+            mysecs[1].innerText = t
+            if (t == parseInt(maxn.value)) {
+                mydiv.innerText = "Player2 Wins!"
+                mysecs[1].style.backgroundColor = "green"
+                mysecs[0].style.backgroundColor = "red"
+            }
+        })
+
+        mybutton.addEventListener('click', function(e) {
+            e.preventDefault()
+            mysecs[0].innerText = 0
+            mysecs[1].innerText = 0
+            mysecs[1].style.backgroundColor = "white"
+            mysecs[0].style.backgroundColor = "white"
+            mydiv.innerText = ""
+        })
+    </script>
+</body>
